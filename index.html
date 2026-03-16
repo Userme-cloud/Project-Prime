@@ -146,10 +146,17 @@
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
         }
         
-        .hero-logo img {
+        .hero-logo img,
+        .hero-logo-video {
             width: 100%;
             height: auto;
             display: block;
+        }
+        
+        .hero-logo-video {
+            border-radius: 12px;
+            object-fit: contain;
+            background: transparent;
         }
         
         .hero-logo-placeholder {
@@ -184,7 +191,7 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--gold);
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
             animation: fadeInUp 0.8s ease-out 0.4s backwards;
         }
         
@@ -268,6 +275,34 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        #about p,
+        #overview p,
+        #modules p,
+        #evaluation p,
+        #series p,
+        #researcher p,
+        footer p,
+        li {
+            color: var(--dark-gray);
+        }
+
+        #about p,
+        #overview p,
+        #evaluation p,
+        #series p,
+        #researcher p {
+            font-size: 1.1rem;
+        }
+
+        .timeline-content p,
+        .alignment-card-back,
+        .session-card p,
+        .session-objectives li,
+        .session-card li,
+        footer p {
+            font-size: 1.05rem;
         }
         
         /* Theoretical Anchors */
@@ -359,7 +394,6 @@
         }
         
         .timeline-content p {
-            font-size: 0.9rem;
             color: var(--dark-gray);
         }
         
@@ -462,7 +496,7 @@
         
         .alignment-card {
             perspective: 1000px;
-            height: 200px;
+            height: 220px;
         }
         
         .alignment-card-inner {
@@ -502,10 +536,10 @@
             background: var(--gold);
             color: var(--navy);
             transform: rotateY(180deg);
-            font-size: 0.85rem;
-            line-height: 1.4;
+            line-height: 1.5;
             overflow-y: auto;
             padding: 1.5rem;
+            font-weight: 500;
         }
         
         .alignment-badge {
@@ -638,6 +672,7 @@
         
         footer p {
             margin-bottom: 0.5rem;
+            color: var(--white);
         }
         
         /* Responsive */
@@ -693,9 +728,10 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-logo">
-            <!-- Replace this placeholder with your logo -->
-            <div class="hero-logo-placeholder">ℙ</div>
-            <!-- <img src="your-logo.png" alt="Project PRIME Logo"> -->
+            <video autoplay muted loop playsinline class="hero-logo-video" aria-label="Project PRIME animated logo">
+                <source src="AZzxd10wSOoKLqMmEz7xaw-AZzxd10w1ZNCGe19PnHNkA.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
         
         <h1>Project PRIME</h1>
@@ -728,7 +764,7 @@
                 of mathematics teacher competence.
             </p>
             
-            <p style="max-width: 900px; margin: 2rem auto; text-align: center; line-height: 1.8; font-size: 1.1rem; color: var(--dark-gray);">
+            <p style="max-width: 900px; margin: 2rem auto; text-align: center; line-height: 1.8;">
                 <strong>Project PRIME</strong> is a Division-wide competence-building program designed to enhance the quality 
                 of mathematics teaching and assessment practices among secondary mathematics teachers in the Division of Aklan. 
                 Grounded in empirical research involving 213 teachers, the program addresses critical gaps in digital self-efficacy, 
@@ -736,7 +772,7 @@
                 strongest predictor of assessment competence (β = .752, p &lt; .001).
             </p>
             
-            <p style="max-width: 900px; margin: 2rem auto; text-align: center; line-height: 1.8; font-size: 1.1rem; color: var(--dark-gray);">
+            <p style="max-width: 900px; margin: 2rem auto; text-align: center; line-height: 1.8;">
                 Through a progressive, evidence-based design, Project PRIME equips educators with the confidence, knowledge, 
                 and skills needed to integrate technology meaningfully into mathematics instruction and assessment, 
                 aligned with DepEd Order No. 31, s. 2020, PPST Domain 5, and the MATATAG curriculum.
@@ -814,7 +850,7 @@
             </div>
             
             <h3 style="text-align: center; color: var(--navy); margin: 4rem 0 2rem;">Policy Alignment</h3>
-            <p style="text-align: center; color: var(--dark-gray); margin-bottom: 2rem; font-style: italic;">Click on each card to view policy excerpts</p>
+            <p style="text-align: center; color: var(--dark-gray); margin-bottom: 2rem; font-style: italic;">Tap or click each card to read the excerpt</p>
             
             <div class="alignment-grid">
                 <div class="alignment-card" onclick="flipCard(this)">
@@ -1229,7 +1265,7 @@
             <h2 class="section-title">The PRIME Series — What Comes Next</h2>
             <p class="section-subtitle">This is just the beginning of a research-driven educational transformation</p>
             
-            <p style="max-width: 900px; margin: 2rem auto; text-align: center; line-height: 1.8; font-size: 1.1rem; color: var(--dark-gray);">
+            <p style="max-width: 900px; margin: 2rem auto; text-align: center; line-height: 1.8;">
                 Project PRIME is designed as the <strong>inaugural initiative of an ongoing series</strong> of competence-building programs. 
                 Just as prime numbers form an infinite, irreducible sequence, each future PRIME project will build on the lessons 
                 and results of its predecessor — expanding to elementary mathematics teachers, extending to other subject areas, 
@@ -1242,9 +1278,6 @@
                     <br><br>
                     Replace this placeholder with your embedded video
                 </div>
-                <!-- To embed your video, replace the placeholder above with:
-                <iframe width="100%" height="400" src="your-video-url" frameborder="0" allowfullscreen></iframe>
-                -->
             </div>
         </div>
     </section>
@@ -1256,9 +1289,7 @@
             
             <div class="researcher-profile">
                 <div class="researcher-photo">
-                    <!-- Replace this placeholder with your photo -->
                     👤
-                    <!-- <img src="your-photo.jpg" alt="Elvisa D. Canoy"> -->
                 </div>
                 
                 <div class="researcher-info">
@@ -1268,14 +1299,14 @@
                         "Cracking the Code: Math Teachers' Digital Self-Efficacy, TPACK, and Assessment Literacy 
                         as Basis for a Competence-Building Program"
                     </p>
-                    <p style="margin-top: 1.5rem; line-height: 1.8; font-size: 1.05rem; color: var(--dark-gray);">
+                    <p style="margin-top: 1.5rem; line-height: 1.8;">
                         This program is the culminating output of a comprehensive study involving 213 secondary mathematics teachers 
                         in the Division of Aklan. The research employed an explanatory sequential mixed-methods design, 
                         revealing that TPACK serves as the strongest predictor of assessment literacy (β = .752, p &lt; .001), 
                         while also identifying critical gaps in digital problem-solving efficacy, technological knowledge, 
                         and assessment design competencies.
                     </p>
-                    <p style="margin-top: 1rem; line-height: 1.8; font-size: 1.05rem; color: var(--dark-gray);">
+                    <p style="margin-top: 1rem; line-height: 1.8;">
                         Project PRIME represents a commitment to evidence-based professional development that is responsive, 
                         data-informed, and directly aligned with DepEd policies and the MATATAG curriculum reform.
                     </p>
@@ -1284,7 +1315,7 @@
             
             <div style="margin-top: 3rem; padding: 2rem; background: var(--white); border-radius: 8px; text-align: center;">
                 <h3 style="color: var(--navy); margin-bottom: 1rem;">Acknowledgments</h3>
-                <p style="line-height: 1.8; max-width: 800px; margin: 0 auto; font-size: 1.05rem; color: var(--dark-gray);">
+                <p style="line-height: 1.8; max-width: 800px; margin: 0 auto;">
                     Sincere gratitude to the Division of Aklan, the 213 participating secondary mathematics teachers, 
                     the dissertation adviser and panel, and all stakeholders who made this research and program development possible. 
                     Your insights, experiences, and dedication to mathematics education have shaped every aspect of Project PRIME.
@@ -1312,6 +1343,14 @@
         function flipCard(card) {
             card.classList.toggle('flipped');
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoVideo = document.querySelector('.hero-logo-video');
+            if (logoVideo) {
+                logoVideo.muted = true;
+                logoVideo.play().catch(() => {});
+            }
+        });
     </script>
 </body>
 </html>
